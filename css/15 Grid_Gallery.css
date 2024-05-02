@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+}
+
+.container
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to right,#011536,#be95c4,#5e548e);
+}
+
+.left-text
+{
+    flex-basis: 30%;
+    text-align: center;
+    color: white;
+}
+
+.heading
+{
+    font-size: 3rem;
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px #a9def9;
+}
+
+.subheading
+{
+    margin-top: 10px;
+    color: #fffdfd;
+    font-weight: 500;
+}
+
+.right-text
+{
+    flex-basis: 50%;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 120px;
+}
+
+.box
+{
+    background-position: top;
+    /* It will appear the top portion of the image into the div box */
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #222;
+    background-blend-mode: hard-light;
+    /* It will blend the background-image and background-color  */
+
+    transition: all 1s ease-in-out;
+}
+
+.box:hover
+{
+    background-color: #999;
+    /* Sets the background-color: #222; (dark color) to background-color: #999; (light color) */
+
+    background-position: center;
+    /* It will appear the centre portion into the div box on hovering */
+    
+    box-shadow: 0px 0px 50px black;
+    cursor: pointer;
+}
+
+/* utility classes */
+
+.row-2
+{
+    grid-row: span 2;
+}
+
+.col-2
+{
+    grid-column: span 2;
+}
+
+/* media querie for width<=1024 */
+
+@media screen and (max-width:1024px) {
+    .container
+    {
+        flex-direction: column;
+        padding-block:20px;
+        /* padding from top and bottom only */
+    }
+    .right-text
+    {
+        width: 100%;
+        grid-auto-rows: 220px;
+    }
+    .box
+    {
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
